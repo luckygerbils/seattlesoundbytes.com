@@ -3,3 +3,22 @@
 #logo {
     font-size: 800%;
     top:  40px; }
+
+#facebook-link {
+    position:fixed;
+    bottom: 5px; right: 5px;
+    opacity: 0.8;
+    
+    &:hover {
+        img.bw { display:none; }
+        img.color { display: block; }
+    }
+    
+    img {
+        width: 50px;
+        
+        &.bw { display: block; }
+        &.color { display: none; }
+    }
+}
+    

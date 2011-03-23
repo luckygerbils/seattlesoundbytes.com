@@ -1,15 +1,17 @@
 ---
-template: true
+:template: true
+:title: nil
+:description: SoundBYTES is the newest Seattle A Cappella sensation, bringing hits of yesterday and today in ways you've never heard before. Sprinkle in lame humor and a bit of dancing and you have an entertaining thrill ride to tell your friends about.
 ---
 !!!
 %html{html_attrs}
   %head
     %meta(http-equiv="Content-Type" content="text/html;charset=utf-8" )
-    %title Seattle SoundBYTES
-    %link(rel="stylesheet" type="text/css" href="/css/#{locals['page']}.css")
+    %title Seattle SoundBYTES #{" - #{title}" if title}
+    %link(rel="stylesheet" type="text/css" href="/css/#{page}.css")
 
-    %meta(name="description" content="SoundBYTES is the newest Seattle A Cappella sensation, bringing hits of yesterday and today in ways you've never heard before. Sprinkle in lame humor and a bit of dancing and you have an entertaining thrill ride to tell your friends about.")
-    %meta(name="keywords" content="soundbytes,seattle,a cappella,music")
+    %meta(name="description" content="#{description}")
+    %meta(name="keywords" content="soundbytes,seattle,a cappella,a capella,music,singing")
   
   %body
     %nav#pages
