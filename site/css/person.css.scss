@@ -1,0 +1,34 @@
+@import "people.css.scss";
+
+.person {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -600px;
+}
+
+.face {
+    filter:alpha(opacity=40);
+    -moz-opacity:0.4;
+    -khtml-opacity: 0.4;
+    opacity: 0.4;
+}
+
+.face.current {
+    filter:alpha(opacity=100);
+    -moz-opacity:1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+.bio {
+    position: absolute;
+    width: 300px;
+    top: 150px;
+    left: 380px;
+    
+     h1 {
+        font-size: 200%;
+    }
+}
+

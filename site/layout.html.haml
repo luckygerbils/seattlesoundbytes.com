@@ -1,0 +1,35 @@
+---
+template: true
+---
+!!!
+%html{html_attrs}
+  %head
+    %meta(http-equiv="Content-Type" content="text/html;charset=utf-8" )
+    %title Seattle SoundBYTES
+    %link(rel="stylesheet" type="text/css" href="/css/#{locals['page']}.css")
+
+    %meta(name="description" content="SoundBYTES is the newest Seattle A Cappella sensation, bringing hits of yesterday and today in ways you've never heard before. Sprinkle in lame humor and a bit of dancing and you have an entertaining thrill ride to tell your friends about.")
+    %meta(name="keywords" content="soundbytes,seattle,a cappella,music")
+  
+  %body
+    %nav#pages
+      %ul
+        %li#people-link       <a href="/people/">People</a>
+        %li#performances-link <a href="/performances/">Performances</a></li>
+    
+    %h1#logo
+      %a(href="/")
+        %span.seattle Seattle
+        %span.soundbytes S<span class="whole">o</span>und<span class="flat">♭</span>YTES
+    
+    = yield
+        
+    %script(src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript")
+    :javascript
+      var img = new Image();
+      $(img).load(function () {
+        $(this).hide();
+        $(this).addClass('background');
+        $(document.body).append(this);
+        $(this).fadeIn();
+      }).attr("src", '/img/bg.jpg');
