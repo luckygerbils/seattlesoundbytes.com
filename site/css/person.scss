@@ -1,0 +1,81 @@
+/**
+ * Styles for /people/:person/.
+ */
+@import "default.scss";
+@import "_opacity.scss";
+
+.person-page .background-image {
+    @include opacity(0.1)
+}
+
+.person {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    width: 80%;
+    min-width: 900px;
+
+    h1 {
+        padding: 10px;
+        margin-right: 45%;
+        font-family: Arial, serif;
+        color: #503E2B;
+        font-size: 400%;
+    }
+
+    .collage {
+       position: absolute;
+       top: 200px;
+       right: 10%;
+       z-index: -1;
+    }
+    
+    .collage img { position: absolute; @include opacity(0.4); }
+    .collage #headshot { @include opacity(1.0); }
+
+    .bio {
+        font-family: Arial, serif;
+        
+        position: relative;
+        margin-left: 5%; margin-right: 40%; margin-top: 0.25em; margin-bottom: 0.25em;
+        padding: 0.5em;
+        line-height: 30px;
+        font-size: 150%;
+        width: 50%;
+        
+        &:before {
+            content: ""; /* empty */
+            position: absolute;
+            top: 0; bottom: 0; right: 0; left: 0;
+            z-index: -1;
+            
+            background-color: #eeeeee;
+            @include opacity(0.9)
+        }
+    }
+}
+
+#headshot { width: 500px; top: 0%; right: 0%; }
+
+#sean #headshot { width: 500px; height: 376px; top: 0%; right: 0%; }
+#sean #collage1 { width: 300px; top: 190px; left: 0px; }
+#sean #collage2 { width: 250px; top: 10px; left: 0px; }
+#sean #collage3 { width: 300px; top: 376px; left: -300px; }
+#sean #collage4 { width: 300px; top: 376px; left: -600px; }
+
+#catherine .collage { right: 11%; }
+#catherine #collage1 { width: 300px; top: 377px; left: -300px; }
+#catherine #collage2 { width: 250px; top: 377px; left: -550px; }
+
+#amanda .collage { right: 11%; }
+
+#revathi .collage { right: 8%; }
+#revathi #headshot { width: 400px; }
+
+#back-link {
+    font-family: Arial, serif;
+    font-size: 130%;
+    &:hover{ text-decoration: underline; }
+    margin-left: 15%;
+}
+

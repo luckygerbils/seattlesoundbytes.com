@@ -1,0 +1,120 @@
+/**
+ * CSS for the fading in/out faces on the landing and people page.
+ */
+@import "_opacity.scss";
+
+$arrow-sprite-dimensions : true;
+@import "arrow/*.png";
+
+/*
+ * The face is the clickable (and hoverable component).
+ */
+.face {
+    position: absolute;
+    z-index: 10; /* Position faces above all other content. */
+
+    &.shine {
+        box-shadow: 0px 0px 5px #fff;
+        z-index: 15; /* Position face above all other faces. */
+    }
+
+    &:hover .name { display: block; }
+    &:hover .cutout { display: block; }
+
+    /*
+     * Additional content in the before or after pseudo elements may be displayed for
+     * a face on hover.
+     */
+    .arrow {
+        position: absolute;
+        content: ' ';
+        overflow: hidden;
+
+        img {
+            position: relative;
+            display: none;
+        }
+    }
+    &:hover .arrow img {
+        display: block;
+    }
+
+    /*
+     * Names are displayed on hover and positioned relative to the face.
+     */
+    .name {
+        display: none;
+        position: absolute;
+        font-family: 'Neucha', arial, serif;
+        font-size: 150%;
+        text-shadow: #fff 0px 0px 5px;
+    }
+
+    /*
+     * Cutout div is added dynamically inside each face and kept the same size
+     * as the face.
+     * This is the non-transparent face that is actually shown on hover.
+     */
+    .cutout {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: none;
+
+        img {
+            position: relative;
+        }
+    }
+}
+
+/**
+ * Sizing/positioning for individual faces.
+ * Sizes are based on an image original size of 1276x851 and scaled via Javascript.
+ */
+#ambar-choudhury {
+    .face { top: 230px; left: 280px; width: 100px; height: 150px; }
+    .name { top: -50px; left: -40px; }
+    .arrow { @include arrow-sprite(ambar); top: 0px; left: -32px; }
+}
+#amanda-sun {
+    .face { top: 210px; left: 370px; width: 95px; height: 140px; }
+    .name { top: -25px; left: -5px; width: 120px; }
+    .arrow { @include arrow-sprite(amanda); top: -15px; left: -25px; }
+}
+#natalie-karbelnig {
+    .face { top: 264px; left: 450px; width: 90px; height: 130px; }
+    .name { top: 140px; left: -15px; }
+    .arrow { @include arrow-sprite(natalie); top: 90px; left: -25px; }
+}
+#jeremie-wallis {
+    .face { top: 220px; left: 515px; width: 90px; height: 130px; }
+    .name { top: -20px; left: -12px; width: 130px; }
+    .arrow { @include arrow-sprite(jeremie); top: 0px; right: -25px; }
+}
+#revathi-murthy {
+    .face { top: 320px; left: 545px; width: 95px; height: 130px; }
+    .name { top: 150px; left: -15px; width: 150px; }
+    .arrow.left { @include arrow-sprite(revathi-left); top: 100px; left: -27px; }
+    .arrow.right { @include arrow-sprite(revathi-right); top: 100px; right: -27px; }
+}
+#charlie-harper {
+    .face { top: 240px; left: 649px; width: 100px; height: 130px; }
+    .name { top: -25px; left: -12px; width: 130px; }
+    .arrow { @include arrow-sprite(charlie); top: 0px; left: -30px; }
+}
+#catherine-long {
+    .face { top: 240px; left: 765px; width: 95px; height: 130px; }
+    .name { top: -50px; left: -30px; width: 110px; }
+    .arrow { @include arrow-sprite(catherine); top: -10px; left: -50px; }
+}
+#sean-anastasi {
+    .face {top: 160px; left: 835px; width: 100px; height: 130px; }
+    .name { top: -20px; left: -10px; width: 130px; }
+    .arrow { @include arrow-sprite(sean); top: 0px; right: -25px; }
+}
+#hannah-krajnik {
+    .face { top: 250px; left: 900px; width: 95px; height: 130px; }
+    .name { top: -20px; left: 100px; width: 110px; }
+    .arrow { @include arrow-sprite(hannah); top: 30px; right: -35px; }
+}
+

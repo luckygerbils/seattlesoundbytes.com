@@ -1,0 +1,131 @@
+/**
+ * Default CSS applied to all pages.
+ */
+@import "_reset.scss";
+
+/** Google web font defintions. */
+@font-face {
+    font-family: 'Neucha';
+    font-style:  normal;
+    font-weight: normal;
+    src: local('Neucha'), url('http://themes.googleusercontent.com/font?kit=bijdhB-TzQdtpl0ykhGh4Q') format('truetype');
+}
+
+@font-face {
+  font-family: 'Fresca';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fresca-Regular'), url('http://themes.googleusercontent.com/static/fonts/fresca/v2/0g0OM5y6slfdHcIfr5XnxevvDin1pK8aKteLpeZ5c0A.woff') format('woff');
+}
+
+/** Site wide element styles. */
+a { color: inherit; text-decoration: none; }
+p a { color: #3B5998; }
+
+body {
+    min-width: 1024px;
+    overflow: hidden;
+    background-color: black;
+}
+
+.background {
+    min-width: 900px;
+    background-image:    url('/img/bg-repeat.png');
+    background-repeat:   repeat;
+    background-position: center top;
+}
+
+/** Default layout styles. */
+#logo {
+    position: relative;
+    margin-left: 9%;
+    margin-top: 20px;
+    z-index: 100;
+
+    font-family: 'Neucha', arial, serif;
+    font-size:   900%;
+    
+    .seattle {
+        font-size: 50%;
+        color: #444;
+        position: absolute; left: 1em; top: 0%;
+    }
+    
+    .soundbytes {
+        .flat { font-size: 90%; vertical-align: 20%; }
+    }
+}
+
+nav#pages {
+    position: absolute;
+    right: 15%;
+    top:   50px;
+    z-index: 101;
+    
+    color: #333;
+    font-family: 'Fresca', arial, serif;
+    font-size: 200%;
+    
+    li {
+        float: left;
+        list-style-type: none;
+        margin-left: 5px;
+    }
+    
+    a { 
+        color: inherit;
+        text-decoration: none;
+        
+        position: relative;
+        display: block;
+
+        border-bottom: 2px solid #777;
+        
+        &::before {
+            content: "♩";
+            position: relative;
+            top: 0.25em;
+            right: -0.2em;
+            visibility: hidden; }
+        &:hover::before {
+            visibility: visible; }
+    }
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -100;
+    width: 100%;
+    margin-left: -50%;
+}
+
+.background-image {
+    width: 100%;
+}
+
+/** Resize the logo based on screen size. */
+@media all and (min-width: 1400px) {
+    //#logo { font-size: 1200%; top:  40px; left: 5% }
+}
+@media all and (max-width: 1400px) and (min-width: 1300px) {
+    //#logo { font-size: 1000%; top:  40px; left: 5% }
+}
+@media all and (max-width: 1300px) and (min-width: 1200px) {
+    //#logo { font-size: 800%; top:  40px; }
+    nav#pages { font-size: 200%; right: 15%; }
+}
+@media all and (max-width: 1200px) and (min-width: 900px) {
+    //#logo { font-size: 700%; top:  40px; }
+    nav#pages { font-size: 180%; right: 10%; }
+}
+@media all and (max-width: 1200px) and (min-width: 1000px) {
+    //#logo { font-size: 650%; top:  40px; }
+    nav#pages { font-size: 180%; right: 10%; }
+}
+@media all and (max-width: 900px) {
+    //#logo { font-size: 600%; top:  40px; }
+    nav#pages { font-size: 150%; right: 5%; }
+}
+

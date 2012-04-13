@@ -1,0 +1,57 @@
+@import "default.scss";
+@import "_opacity.scss";
+
+.performances-page .background-image {
+    @include opacity(0.1)
+}
+
+#performances, #performances::before {
+    width: 605px;
+    padding: 20px;
+}
+
+#performances::before {
+    content: ""; /* empty */
+    position: absolute;
+    top: 0; bottom: 0; right: 0; left: 0;
+    z-index: -1;
+    
+    background-color: white;
+    @include opacity(0.4)
+}
+
+#performances {
+    position: relative;
+    margin: auto;
+    
+    font-family: sans-serif;
+    
+    section {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        section {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+    }
+    
+    h1 {
+        font-size: 200%;
+        text-align: left;
+        margin: 0.25em;
+        margin-top: 0; margin-left: 0;
+        font-family: Arial, serif;
+        color: #503E2B;
+    }
+   
+    .time { 
+        font-weight: bold;
+        float: left;
+        clear: both;
+        width: 12em;
+        margin-bottom: 0.5em; }
+    .description { margin-left: 12em; }
+    
+    em { font-style: italic; }
+    p { margin-top: 0.5em; margin-bottom: 0.5em; }
+}

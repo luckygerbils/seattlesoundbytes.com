@@ -1,0 +1,15 @@
+/**
+ * Styles for /people/.
+ */
+@import "default.scss";
+@import "_opacity.scss";
+
+.background-image { @include opacity(0.5) }
+.cutout { @include opacity(1.0) }
+
+@import "_faces.scss";
+
+.cutout {
+    display: block !important;
+}
+
