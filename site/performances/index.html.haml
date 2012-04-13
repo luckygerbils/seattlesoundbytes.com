@@ -8,25 +8,76 @@
   %h1 Upcoming Performances
 
   %section(itemscope itemtype="http://data-vocabulary.org/Event")
-    %time(itemprop="startDate" datetime="2011-04-16T18:00:00 -08:00") April 16th, 6pm
+    .time
+      %time(itemprop="startDate" datetime="2012-04-29T11:30:00 -08:00") April 29th, 11:30am
     .description
-      %p 
-        %a(href="http://www.facebook.com/pages/314-Bakery/101011049943641" itemprop="url")
-          <span itemprop="summary">Performance at the <span itemprop="location">3.14 Bakery</span></span>
+      %a(id="Kaffeeklatsch_Apr_29" href="http://seattlesoundbytes.com/performances/#Kaffeeklatsch_Apr_29" itemprop="url")
+      %p(itemprop="summary")
+        Performance at <a href="http://www.kaffeeklatschseattle.com/"><span itemprop="location">Kaffeeklatsch Coffee</span></a>
 
-  %section(itemscope itemtype="http://data-vocabulary.org/Event")
-    %time(itemprop="startDate" datetime="2011-05-14T19:00:00 -08:00") May 14th, 7pm-9pm
-    .description
-      %h2(itemprop="summary") SoundBYTES <em>The Perfect Size For AWESOME!</em>
-      %p(itemprop="description")
-        Come see us at the <span itemprop="location">Renton Civic Theater</span>!<br />
-        %a(href="http://www.brownpapertickets.com/event/162512" itemprop="url") Tickets available NOW!
+  %section
+    %section(itemscope itemtype="http://data-vocabulary.org/Event")
+      .time
+        %time(itemprop="startDate" datetime="2011-05-12T16:00:00 -08:00") May 12th, 4pm -
+        %time(itemprop="endDate" datetime="2011-05-12T17:30:00:00 -08:00") 5:30pm
+      .description
+        %a(href="http://www.brownpapertickets.com/event/241895" itemprop="url")
+        %h2(itemprop="summary")
+          <em>The Hangover</em>: A Musical
+        <span style="display:none" itemprop="location">UW Ethnic Cultural Center Theater</span>
+          
+    %section(itemscope itemtype="http://data-vocabulary.org/Event")
+      .time
+        %time(itemprop="startDate" datetime="2011-05-19T18:00:00 -08:00") May 19th, 6pm -
+        %time(itemprop="endDate" datetime="2011-05-19T19:30:00:00 -07:30") 7:30pm
+      .description
+        %a(href="http://www.brownpapertickets.com/event/241897" itemprop="url")
+        %h2(itemprop="summary" style="display:none;")
+          <em>The Hangover</em>: A Musical
+        <span style="display:none" itemprop="location">Seattle Center House - 4th Floor</span>
+        %p(itemprop="description")
+          A musical inspired by the movie, The Hangover.
+          This show was an enormous success at it's debut last Autumn, we're excited to bring it back to the U-District again!
+        %p
+          Performance on May 12th at the UW <a href="http://depts.washington.edu/ecc/about-the-center-and-theatre/">Ethnic Cultural Center Theater</a>.
+          Tickets on <a href="http://www.brownpapertickets.com/event/241895">Brown Paper Tickets</a>.
+        %p
+          Performance on May 19th at the Seattle Center House (4th Floor).
+          Tickets on <a href="http://www.brownpapertickets.com/event/241897">Brown Paper Tickets</a>.
         
-      %p The event you've been waiting for! Seattle SoundBYTES in their first full length concert, complete with singing, dancing and special guests. Bring your friends and family to this all ages show. Featuring songs from Heart, Queen, and much much more! We will also be holding a raffle during the show to support Children's Hospital of Seattle.
+  %section
+    %section(itemscope itemtype="http://data-vocabulary.org/Event")
+      .time
+        %time(itemprop="startDate" datetime="2011-05-18T18:00:00 -08:00") May 18th, 6pm -
+        %time(itemprop="endDate" datetime="2011-05-18T19:30:00 -08:00") 7:30pm
+      .description
+        %a(href="http://www.brownpapertickets.com/event/241900" itemprop="url")
+        %h2(itemprop="summary" style="display:none;")
+          <em>Jack Sparrow</em>
 
-  %section(itemscope itemtype="http://data-vocabulary.org/Event")
-    %time(itemprop="startDate" datetime="2011-05-21") May 21st
-    .description
-      %p
-        %a(href="http://www.relayforlife.org/" itemprop="url")
-          <span itemprop="summary">Relay For Life</span>
+    %section(itemscope itemtype="http://data-vocabulary.org/Event")
+      .time
+        %time(itemprop="startDate" datetime="2011-05-18T20:00:00 -08:00") May 18th, 8pm -
+        %time(itemprop="endDate" datetime="2011-05-18T21:30:00 -08:00") 9:30pm
+      .description
+        %a(href="http://www.brownpapertickets.com/event/241900" itemprop="url")
+        %h2(itemprop="summary" style="display:none;")
+          <em>Jack Sparrow</em>
+
+    %section(itemscope itemtype="http://data-vocabulary.org/Event")
+      .time
+        %time(itemprop="startDate" datetime="2011-05-19T20:00:00 -08:00") May 19th, 8pm -
+        %time(itemprop="endDate" datetime="2011-05-19T21:30:00 -08:00") 9:30pm
+      .description
+        %a(href="http://www.brownpapertickets.com/event/241972" itemprop="url")
+        %h2(itemprop="summary")
+          <em>Jack Sparrow</em>
+        %p(itemprop="description")
+          A new musical inspired by Pirates of the Caribbean and Ocean's Eleven!
+        %p
+          Two performances on May 18th at the UW <a href="http://depts.washington.edu/uwdrama/performances/venues.shtml#Penthouse"><span itemprop="location">Penthouse Theater</span></a>.
+          Tickets on <a href="http://www.brownpapertickets.com/event/241900">Brown Paper Tickets</a>.
+        %p
+          One performace on May 19th at Theater4 in downtown Seattle.
+          Tickets on <a href="http://www.brownpapertickets.com/event/241972">Brown Paper Tickets</a>.
+

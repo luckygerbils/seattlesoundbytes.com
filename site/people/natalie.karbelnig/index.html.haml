@@ -4,34 +4,16 @@
 :description: SoundBYTES bio for Natalie Karbelnig.
 :layout: layout
 ---
-.person
-  .bio(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
-    %h1(itemprop="name") Natalie Karbelnig
+.person#natalie(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+  .collage
+    %img#headshot(src="/img/members/natalie.jpg")
+  %h1(itemprop="name") Natalie Karbelnig
+  %span(itemprop="affiliation" style="display:none;") SoundBYTES
+  .bio
     %p
-      Natalie Karbelnig (<span itemprop="title">Soprano</span>) studies Art History, and is a junior at UW. She enjoys writing, literature, playing her ukulele, and contemporary photography. Natalie hopes to figure out where she belongs in the art world, and may pursue architecture as a grad student. She also wrote these bios!!
-%nav#people
-  %ul
-    %li
-      %a.face#amanda-sun-face(href="/people/amanda.sun/")
-        .name Amanda Sun
-    %li
-      %a.face#charlie-harper-face(href="/people/charlie.harper/")
-        .name Charlie Harper
-    %li 
-      %a.face#hannah-krajnik-face(href="/people/hannah.krajnik/")
-        .name Hannah Krajnik
-    %li
-      %a.face#jeremie-wallis-face(href="/people/jeremie.wallis/")
-        .name Jeremie Wallis
-    %li
-      %a.face.current#natalie-karbelnig-face(href="/people/natalie.karbelnig/")
-        .name Natalie Karbelnig
-    %li
-      %a.face#catherine-long-face(href="/people/catherine.long/")
-        .name Catherine Long
-    %li
-      %a.face#revathi-murthy-face(href="/people/revathi.murthy/")
-        .name Revathi Murthy
-    %li
-      %a.face#sean-anastasi-face(href="/people/sean.anastasi/")
-        .name Sean Anastasi
+      Natalie Karbelnig (<span class="part" itemprop="title">Soprano</span>) studies Art History,
+      and is a junior at UW. She enjoys writing, literature, playing her ukulele,
+      and contemporary photography. Natalie hopes to figure out where she belongs
+      in the art world, and may pursue architecture as a grad student. She also wrote these bios!!
+
+%a#back-link(href="/people/") ← Back to People

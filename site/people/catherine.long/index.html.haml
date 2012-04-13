@@ -4,35 +4,20 @@
 :description: SoundBYTES bio for Catherine Long.
 :layout: layout
 ---
-.person
-  .bio(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
-    %h1(itemprop="name") Catherine Long
+.person#catherine(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+  .collage
+    %img#headshot(src="/img/members/catherine/headshot.jpg")
+    %img.fade#collage1(src="/img/members/catherine/collage1.jpg")
+    %img.fade#collage2(src="/img/members/catherine/collage2.jpg")
+  %span(itemprop="affiliation" style="display:none;") SoundBYTES
+  %h1(itemprop="name") Catherine Long
+  .bio
     %p
-      Catherine Long sings <span itemprop="title">Tenor</span>, and is in her 3rd year at UW. Cat pursues Women's Studies as her major, and is a boxing, baking, and cake-decorating enthusiast. Despite her infatuation with Mr. Feeny from "Boy Meets World," Cat hopes to become a social worker in the near future. She has bungee jumped, lived abroad, and rocks a mohawk HARD.
+      Catherine Long sings <span class="part" itemprop="title">Tenor</span>, and is in her 3rd
+      year at UW. Cat pursues Women's Studies as her major, and is a boxing, baking,
+      and cake-decorating enthusiast. Despite her infatuation with Mr. Feeny from
+      "Boy Meets World," Cat hopes to become a social worker in the near future.
+      She has bungee jumped, lived abroad, and rocks a mohawk HARD.
 
-%nav#people
-  %ul
-    %li
-      %a.face#amanda-sun-face(href="/people/amanda.sun/")
-        .name Amanda Sun
-    %li
-      %a.face#charlie-harper-face(href="/people/charlie.harper/")
-        .name Charlie Harper
-    %li 
-      %a.face#hannah-krajnik-face(href="/people/hannah.krajnik/")
-        .name Hannah Krajnik
-    %li
-      %a.face#jeremie-wallis-face(href="/people/jeremie.wallis/")
-        .name Jeremie Wallis
-    %li
-      %a.face#natalie-karbelnig-face(href="/people/natalie.karbelnig/")
-        .name Natalie Karbelnig
-    %li
-      %a.face.current#catherine-long-face(href="/people/catherine.long/")
-        .name Catherine Long
-    %li
-      %a.face#revathi-murthy-face(href="/people/revathi.murthy/")
-        .name Revathi Murthy
-    %li
-      %a.face#sean-anastasi-face(href="/people/sean.anastasi/")
-        .name Sean Anastasi
+%a#back-link(href="/people/") ← Back to People
+

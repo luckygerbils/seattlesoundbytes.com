@@ -1,7 +1,5 @@
 ---
-:template: true
-:title: nil
-:description: SoundBYTES is the newest Seattle A Cappella sensation, bringing hits of yesterday and today in ways you've never heard before. Sprinkle in lame humor and a bit of dancing and you have an entertaining thrill ride to tell your friends about.
+:render: false
 ---
 !!!
 %html{html_attrs}
@@ -11,9 +9,9 @@
     %link(rel="stylesheet" type="text/css" href="/css/#{page}.css")
 
     %meta(name="description" content="#{description}")
-    %meta(name="keywords" content="soundbytes,seattle,a cappella,a capella,music,singing")
+    %meta(name="keywords" content="soundbytes,seattle,a cappella,a capella,acappella,music,singing")
   
-  %body
+  %body(class="#{page}-page")
     %nav#pages
       %ul
         %li#people-link       <a href="/people/">People</a>
@@ -21,17 +19,183 @@
     
     %h1#logo
       %a(href="/")
-        %span.seattle Seattle
-        %span.soundbytes S<span class="whole">o</span>und<span class="flat">♭</span>YTES
+        .seattle-soundbytes
+          %span.seattle Seattle
+          %span.soundbytes S<span class="whole">o</span>und<span class="flat">b</span>YTES
     
     = yield
-        
-    %script(src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript")
+    
+    %script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js")
+    
     :javascript
-      var img = new Image();
-      $(img).load(function () {
-        $(this).hide();
-        $(this).addClass('background');
-        $(document.body).append(this);
+      (function($) {
+        var background = $('.background');
+        if (!background.length) {
+            background = $('<div class="background">');
+            $(document.body).append(background);
+        }
+
+        var fileWidth = 1276;
+        var fileHeight = 851;
+        var originalFaceDims = {};
+        var originalArrowDims = {};
+
+        function resizeFaces() {
+          var bgWidth  = background.width();
+          var bgHeight = background.height();
+          $('.face').each(function(i, face) {
+            $(face).css({
+              'left': originalFaceDims[face].left * bgWidth,
+              'top': originalFaceDims[face].top * bgHeight,
+              'width': originalFaceDims[face].width * bgWidth,
+              'height': originalFaceDims[face].height * bgHeight
+            });
+
+            $(face).find('.cutout img').css({
+              'left': -(originalFaceDims[face].left * bgWidth),
+              'top': -(originalFaceDims[face].top * bgHeight),
+              'width': bgWidth,
+              'height': bgHeight
+            });
+
+            $(face).find('.arrow').each(function(i, arrow) {
+                var originalDims = $(arrow).data('originalDims');
+                $(arrow).css({
+                    'left': originalDims.left * bgWidth,
+                    'top': originalDims.top * bgHeight,
+                    'width': originalDims.width * bgWidth,
+                    'height': originalDims.height * bgHeight
+                });
+
+                $(arrow).find('img').each(function(i, img) {
+                    var originalDims = $(img).data('originalDims');
+                    if ($(img).data('originalDims')) {
+                        $(img).css({
+                            'left': originalDims.left * bgWidth,
+                            'top': originalDims.top * bgHeight,
+                            'width': originalDims.width * bgWidth,
+                            'height': originalDims.height * bgHeight
+                        });
+                    }
+                });
+            });
+
+            $(face).find('.name').css({
+                'zoom': 1.0 / fileHeight * bgHeight,
+                '-moz-transform': 'scale(' + 1.0 / fileHeight * bgHeight + ')'
+            });
+          });
+
+          $('#logo').css({
+            'zoom': 1.0 / fileHeight * bgHeight,
+            '-moz-transform': 'scale(' + 1.0 / fileHeight * bgHeight + ')'
+            });
+        };
+
+        var backgroundImage = new Image();
+        $(backgroundImage).load(function () {
+          var img = $(this);
+          img.hide();
+          img.addClass('background-image');
+          background.append(img);
+          img.fadeIn();
+          
+          $('.face').each(function(i, face) {
+            var position = $(face).position();
+            $(face).append(
+              $('<div>').addClass('cutout')
+                  .append($("<img>").attr('src', img.attr('src'))));
+            
+            if ($(face).is('#revathi-murthy .face')) {
+                $(face).append($('<div>').addClass('arrow').addClass('left'));
+                $(face).append($('<div>').addClass('arrow').addClass('right'));
+            } else {
+                $(face).append($('<div>').addClass('arrow'));
+            }
+
+            $(face).find('.arrow').each(function(i, arrow) {
+                var arrowImageUrl = decodeURIComponent($(arrow).css('background-image')).replace(/url\("?/,'').replace(/"?\)/,'');
+                $(arrow).css('background-image', 'none');
+                var arrowImage = $('<img>').attr('src', arrowImageUrl);
+                $(arrow).append(arrowImage);
+
+                var arrowImgPos = $.map(
+                    $(arrow).css('background-position').split(' '),
+                    function(e) { return +e.replace(/[^-\d\.]/g, '');});
+                arrowImage.load(function() {
+                    $(this).data('originalDims', {
+                        'left': arrowImgPos[0] / fileWidth,
+                        'top': arrowImgPos[1] / fileHeight,
+                        'width': this.width / fileWidth,
+                        'height': this.height / fileHeight
+                    });
+                    
+                    var bgWidth = background.width();
+                    var bgHeight = background.height();
+                    $(this).css({
+                        'left': arrowImgPos[0] / fileWidth * bgWidth,
+                        'top': arrowImgPos[1] /fileHeight * bgHeight,
+                        'width': this.width / fileWidth * bgWidth,
+                        'height': this.height / fileHeight * bgHeight
+                    });
+                });
+                arrowImage.css({
+                    'left': arrowImgPos[0],
+                    'top': arrowImgPos[1]
+                });
+    
+                var position = $(arrow).position();
+                $(arrow).data('originalDims', {
+                  'left': position.left / fileWidth,
+                  'top': position.top / fileHeight,
+                  'width': $(arrow).width() / fileWidth,
+                  'height': $(arrow).height() / fileHeight
+                });
+            });
+
+            
+            originalFaceDims[face] = {
+              'left': position.left / fileWidth,
+              'top': position.top / fileHeight,
+              'width': $(face).width() / fileWidth,
+              'height': $(face).height() / fileHeight
+            };
+          });
+          resizeFaces();
+        }).attr("src", '/img/bg.jpg');
+
+        $(window).on('resize', resizeFaces);
+      })(jQuery);
+
+    - unless page == 'people'
+      :javascript
+        (function($){
+            $('.background').data('timer', []);
+            $('.face').hover(
+                function(e) {
+                    if ($(document.body).hasClass('landing-page')) {
+                        $('.background').addClass('face-hover');
+                        $.each($('.background').data('timer'), function(i, timer) {
+                            clearTimeout(timer);
+                        });
+                        $('.background').data('timer', []);
+                        $('.background-image').fadeTo('fast', 0.5);
+                        $(this).addClass('selected');
+                    }
+                },
+                function(e) {
+                    if ($(document.body).hasClass('landing-page')) {
+                        $('.background').data('timer').push(setTimeout(function() {
+                            $('.background-image').fadeTo('fast', 1.0, function() { $(this).css({'opacity': ''});});
+                          }, 1000));
+                        $('.background').removeClass('face-hover');
+                        $(this).removeClass('selected');
+                    }
+                });
+        })(jQuery);
+        
+    :javascript
+      $('img.fade').hide().load(function() {
         $(this).fadeIn();
-      }).attr("src", '/img/bg.jpg');
+        });
+      

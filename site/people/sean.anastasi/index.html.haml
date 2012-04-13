@@ -4,35 +4,21 @@
 :description: SoundBYTES bio for Sean Anastasi.
 :layout: layout
 ---
-.person
-  .bio(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
-    %h1(itemprop="name") Sean Anastasi
+.person#sean(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+  .collage
+    %img#headshot(src="/img/members/sean/headshot.jpg")
+    %img.fade#collage1(src="/img/members/sean/collage1.jpg")
+    %img.fade#collage2(src="/img/members/sean/collage2.jpg")
+    %img.fade#collage3(src="/img/members/sean/collage3.jpg")
+    %img.fade#collage4(src="/img/members/sean/collage4.jpg")
+  %h1(itemprop="name") Sean Anastasi
+  %span(itemprop="affiliation" style="display:none;") SoundBYTES
+  .bio
     %p
-      Sean Anastasi (<span itemprop="title">Baritone/Bass</span>) works as a Software Developer, and graduated from UW in 2010. An avid reader, Sean still makes time for extreme biking and website building. When asked his favorite color, Sean will respond with "#3e4f60" which is supposedly blue-gray-green (computer science...). As the bass of the group, Sean is our rock!
+      Sean (<span class="part" itemprop="title">Baritone/Bass</span>) works as a Software
+      Developer, and graduated from UW in 2010. An avid reader, Sean still makes time
+      for biking and website building. When asked his favorite color, Sean will respond
+      with <span style="color:#3e4f60">"#3e4f60"</span> which is supposedly blue-gray-green (computer science...). He made
+      this website! As the bass of the group, Sean is our rock!
 
-%nav#people
-  %ul
-    %li
-      %a.face#amanda-sun-face(href="/people/amanda.sun/")
-        .name Amanda Sun
-    %li
-      %a.face#charlie-harper-face(href="/people/charlie.harper/")
-        .name Charlie Harper
-    %li 
-      %a.face#hannah-krajnik-face(href="/people/hannah.krajnik/")
-        .name Hannah Krajnik
-    %li
-      %a.face#jeremie-wallis-face(href="/people/jeremie.wallis/")
-        .name Jeremie Wallis
-    %li
-      %a.face#natalie-karbelnig-face(href="/people/natalie.karbelnig/")
-        .name Natalie Karbelnig
-    %li
-      %a.face#catherine-long-face(href="/people/catherine.long/")
-        .name Catherine Long
-    %li
-      %a.face#revathi-murthy-face(href="/people/revathi.murthy/")
-        .name Revathi Murthy
-    %li
-      %a.face.current#sean-anastasi-face(href="/people/sean.anastasi/")
-        .name Sean Anastasi
+%a#back-link(href="/people/") ← Back to People
