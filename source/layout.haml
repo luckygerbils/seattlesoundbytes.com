@@ -6,7 +6,8 @@
   %head
     %meta(http-equiv="Content-Type" content="text/html;charset=utf-8" )
     %title Seattle SoundBYTES #{" - #{data.page.title}" if data.page.title}
-    %link(rel="stylesheet" type="text/css" href="/stylesheets/#{data.page.page}.css")
+    
+    = stylesheet_link_tag "#{data.page.page}.css"
 
     %meta(name="description" content="#{data.page.description}")
     %meta(name="keywords" content="soundbytes,seattle,a cappella,a capella,acappella,music,singing")

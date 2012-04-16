@@ -26,8 +26,13 @@ configure :build do
   # Minify CSS.and Javascript
   activate :minify_css
   activate :minify_javascript
+  
   # Compress images.
   activate :smusher
+  
   # Let HTML output be ugly.
   set :haml, { :ugly => true }
+  
+  # Make resource urls be unique so we can set far-future expires headers.
+  activate :cache_buster
 end
