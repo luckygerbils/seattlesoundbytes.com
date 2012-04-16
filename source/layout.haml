@@ -1,17 +1,17 @@
 ---
 :render: false
 ---
-!!!
+!!! 5
 %html{html_attrs}
   %head
     %meta(http-equiv="Content-Type" content="text/html;charset=utf-8" )
-    %title Seattle SoundBYTES #{" - #{title}" if title}
-    %link(rel="stylesheet" type="text/css" href="/css/#{page}.css")
+    %title Seattle SoundBYTES #{" - #{data.page.title}" if data.page.title}
+    %link(rel="stylesheet" type="text/css" href="/stylesheets/#{data.page.page}.css")
 
-    %meta(name="description" content="#{description}")
+    %meta(name="description" content="#{data.page.description}")
     %meta(name="keywords" content="soundbytes,seattle,a cappella,a capella,acappella,music,singing")
   
-  %body(class="#{page}-page")
+  %body(class="#{data.page.page}-page")
     %nav#pages
       %ul
         %li#people-link       <a href="/people/">People</a>
@@ -162,12 +162,12 @@
             };
           });
           resizeFaces();
-        }).attr("src", '/img/bg.jpg');
+        }).attr("src", '/images/bg.jpg');
 
         $(window).on('resize', resizeFaces);
       })(jQuery);
 
-    - unless page == 'people'
+    - unless data.page.page == 'people'
       :javascript
         (function($){
             $('.background').data('timer', []);

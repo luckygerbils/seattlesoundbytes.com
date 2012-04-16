@@ -1,13 +1,26 @@
-# Require any additional compass plugins here.
+###
+# Global
+###
+# External file encoding should be UTF-8
 Encoding.default_external = 'utf-8'
 
-# Set this to the root of your project when deployed:
-http_path = "/"
-css_dir = "www/css"
-sass_dir = "site/css"
-images_dir = "www/img"
-http_images_path = "/img"
-javascripts_dir = "js"
+set :build_dir,   'www'
+
+### 
+# Compass
+###
+compass_config do |config|
+    config.http_path = "/"
+    #config.sass_dir = "source/css"
+    #config.images_dir = "source/img"
+    #config.http_images_path = "/img"
+    #config.javascripts_dir = "js"
+end
+
+###
+# Haml
+###
+set :haml, { :attr_wrapper => "\"" } 
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
@@ -18,3 +31,10 @@ output_style = :compressed
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 # line_comments = false
+
+# Build-specific configuration
+configure :build do
+  activate :minify_css
+  
+  set :haml, { :ugly => true }
+end
