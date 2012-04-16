@@ -10,7 +10,6 @@
     font-weight: normal;
     src: local('Neucha'), url('http://themes.googleusercontent.com/font?kit=bijdhB-TzQdtpl0ykhGh4Q') format('truetype');
 }
-
 @font-face {
   font-family: 'Fresca';
   font-style: normal;
@@ -82,7 +81,7 @@ nav#pages {
         border-bottom: 2px solid #777;
         
         &::before {
-            content: "♩";
+            content: " ";
             position: relative;
             top: 0.25em;
             right: -0.2em;
@@ -128,4 +127,3 @@ nav#pages {
     //#logo { font-size: 600%; top:  40px; }
     nav#pages { font-size: 150%; right: 5%; }
 }
-
