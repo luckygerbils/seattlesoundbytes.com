@@ -2,13 +2,12 @@
 :page: person
 :title: Catherine Long
 :description: SoundBYTES bio for Catherine Long.
-:layout: layout
 ---
 .person#catherine(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
   .collage
-    %img#headshot(src="/img/members/catherine/headshot.jpg")
-    %img.fade#collage1(src="/img/members/catherine/collage1.jpg")
-    %img.fade#collage2(src="/img/members/catherine/collage2.jpg")
+    %img#headshot{src: asset_path(:images, 'members/catherine/headshot.jpg')}}
+    %img.fade#collage1{src: asset_path(:images, 'members/catherine/collage1.jpg')}}
+    %img.fade#collage2{src: asset_path(:images, 'members/catherine/collage2.jpg')}}
   %span(itemprop="affiliation" style="display:none;") SoundBYTES
   %h1(itemprop="name") Catherine Long
   .bio

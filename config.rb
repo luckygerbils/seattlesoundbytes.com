@@ -6,6 +6,8 @@ Encoding.default_external = 'utf-8'
 
 set :build_dir,   'www'
 
+activate :directory_indexes
+
 ### 
 # Compass
 ###

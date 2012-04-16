@@ -2,11 +2,10 @@
 :page: person
 :title: Ambar Choudhury
 :description: SoundBYTES bio for Ambar Choudhury.
-:layout: layout
 ---
 .person#ambar(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
   .collage
-    %img#headshot(src="/img/members/ambar.jpg")
+    %img#headshot{src: asset_path(:images, 'members/ambar.jpg')}}
   %h1(itemprop="name") Ambar Choudhury
   %span(itemprop="affiliation" style="display:none;") SoundBYTES
   .bio
