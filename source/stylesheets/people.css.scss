@@ -1,7 +1,7 @@
 /**
  * Styles for /people/.
  */
-@import "default.scss";
+@import "default.css.scss";
 @import "_opacity.scss";
 
 .background-image { @include opacity(0.5) }

@@ -12,7 +12,7 @@ set :build_dir,   'www'
 compass_config do |config|
     config.http_path = "/"
     #config.sass_dir = "source/css"
-    config.images_dir = "source/img"
+    #config.images_dir = "source/img"
     #config.http_images_path = "/img"
     #config.javascripts_dir = "js"
 end
