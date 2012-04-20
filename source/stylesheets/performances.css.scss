@@ -1,49 +1,95 @@
 @import "default.css.scss";
 @import "_opacity.scss";
 
-.performances-page .background-image {
+.background-image {
     @include opacity(0.1)
 }
 
-#performances, #performances::before {
-    width: 605px;
+.shows, .shows::before {
     padding: 20px;
+    float: left;
 }
-
-#performances::before {
+.shows::before, .showtimes::after {
     content: ""; /* empty */
     position: absolute;
     top: 0; bottom: 0; right: 0; left: 0;
     z-index: -1;
+    width: 100%;
     
     background-color: white;
     @include opacity(0.4)
 }
 
-#performances {
+.shows h2, .showtimes h2 {
+    font-size: 150%;
+    text-align: left;
+    margin: 0.25em;
+    margin-top: 0; margin-left: 0;
+    font-family: Arial, serif;
+    color: #503E2B;
+}
+
+.shows {
     position: relative;
-    margin: auto;
+    width: 40%;
+    margin-left: 3%;
     
     font-family: sans-serif;
-    
-    section {
-        margin-top: 1em;
-        margin-bottom: 1em;
-        section {
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
+
+    .show {
+        display: block;
+        overflow: hidden;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+        
+        .title {
+            font-style: italic;
+        }
+        
+        .poster {
+            float: left;
+            width: 90px;
+            margin-right: 10px;
         }
     }
+}
+
+.showtimes, .showtimes::before {
+    padding: 20px;
+    float: right;
+}
+
+.showtimes {
+    position: relative;
+    margin: auto;
+    margin-right: 3%;
     
-    h1 {
-        font-size: 200%;
+    width: 40%;
+    font-family: sans-serif;
+    
+    .title {
+        font-size: 110%;
         text-align: left;
-        margin: 0.25em;
-        margin-top: 0; margin-left: 0;
+        margin: 0.5em;
+        margin-left: 0;
         font-family: Arial, serif;
         color: #503E2B;
+        clear: both;
     }
-   
+    
+    .buybutton {
+        display: inline-block;
+        padding: 2px;
+        margin: 5px;
+        background-color: #F60;
+        border: 1px solid black;
+        line-height: 20px;
+        height: 20px;
+        vertical-align: middle;
+        font-size: 90%;
+    }
+    
     .time { 
         font-weight: bold;
         float: left;
