@@ -77,17 +77,9 @@ nav#pages {
         
         position: relative;
         display: block;
-
-        border-bottom: 2px solid #777;
-        
-        &::before {
-            content: " ";
-            position: relative;
-            top: 0.25em;
-            right: -0.2em;
-            visibility: hidden; }
-        &:hover::before {
-            visibility: visible; }
+        margin-right: 20px;
+        &:hover {
+             border-bottom: 2px solid #777; }
     }
 }
 

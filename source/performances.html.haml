@@ -19,6 +19,14 @@
 
 .showtimes
   %h2 Showtimes
+  %section(itemscope itemtype="http://data-vocabulary.org/Event")
+    .time
+      %time(itemprop="startDate" datetime="2012-04-29T11:30:00 -08:00") April 29th, 11:30am
+    .description
+      %a(id="Kaffeeklatsch_Apr_29" href="http://seattlesoundbytes.com/performances/#Kaffeeklatsch_Apr_29" itemprop="url")
+      %p(itemprop="summary")
+        Performance at <a href="http://www.kaffeeklatschseattle.com/"><span itemprop="location">Kaffeeklatsch Coffee</span></a>
+
   %section.showtime
     %h3.title The Hangover: A Musical
     .event(itemscope itemtype="http://data-vocabulary.org/Event")
@@ -62,12 +70,4 @@
         %time(itemprop="endDate" datetime="2011-05-18T21:30:00 -07:00") 9:30pm
       @ <span itemprop="location">Theatre4, Seattle Center House</span>
       %a.buybutton(href="http://www.brownpapertickets.com/event/241972" itemprop="url") Buy Tickets on BPT
-
-  %section(itemscope itemtype="http://data-vocabulary.org/Event")
-    .time
-      %time(itemprop="startDate" datetime="2012-04-29T11:30:00 -08:00") April 29th, 11:30am
-    .description
-      %a(id="Kaffeeklatsch_Apr_29" href="http://seattlesoundbytes.com/performances/#Kaffeeklatsch_Apr_29" itemprop="url")
-      %p(itemprop="summary")
-        Performance at <a href="http://www.kaffeeklatschseattle.com/"><span itemprop="location">Kaffeeklatsch Coffee</span></a>
 

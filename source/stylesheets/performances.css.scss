@@ -71,7 +71,7 @@
     .title {
         font-size: 110%;
         text-align: left;
-        margin: 0.5em;
+        margin: 1em;
         margin-left: 0;
         font-family: Arial, serif;
         color: #503E2B;
@@ -82,8 +82,13 @@
         display: inline-block;
         padding: 2px;
         margin: 5px;
-        background-color: #F60;
+        
+        background-color: #f60;
         border: 1px solid black;
+        border-left-color: #555;
+        border-bottom-color: #555;
+        box-shadow: inset -5px -5px 5px 5px #f75;
+        
         line-height: 20px;
         height: 20px;
         vertical-align: middle;
